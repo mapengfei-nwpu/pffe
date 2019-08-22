@@ -5,16 +5,16 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-
+#include "constants.h"
 namespace dolfin
 {
+
   /**********************warning********************/
   // copy function near from dolfin/math/basic.cpp
   // simplified version of dolfin. 
   bool near(double x, double x0, double eps=DOLFIN_EPS);
   void dolfin_assert(bool a);
   /*************************************************/
-
   /// A Point represents a point in :math:`\mathbb{R}^3` with
   /// coordinates :math:`x, y, z,` or alternatively, a vector in
   /// :math:`\mathbb{R}^3`, supporting standard operations like the
