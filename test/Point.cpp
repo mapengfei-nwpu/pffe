@@ -3,22 +3,25 @@
 #include "constants.h"
 #include "Point.h"
 
-using namespace dolfin;
+
 /**********************warning********************/
 //additional functions start
 /**********************warning********************/
-bool near(double x, double x0, double eps=DOLFIN_EPS){
+bool dolfin::near(double x, double x0, double eps){
   return x0 - eps <= x && x <= x0 + eps;
 }
 #include<stdexcept>
 #include<iostream>
-void dolfin_assert(bool a){
+void dolfin::dolfin_assert(bool a){
     if (!a)throw std::runtime_error("It is wrong!haha~");
     else std::cout<<"OK"<<std::endl;
 }
 /**********************warning********************/
 //additional functions end
 /**********************warning********************/
+
+
+using namespace dolfin;
 const Point Point::cross(const Point& p) const
 {
   Point q;
