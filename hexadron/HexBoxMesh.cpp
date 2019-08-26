@@ -73,7 +73,7 @@ void HexBoxMesh::build_hex(Mesh& mesh, const std::array<Point, 2>& p,
     {
       for (std::size_t ix = 0; ix < nx; ix++)
       {
-        v[0] = (iz*(ny + 1)*(nx + 1) + iy*(nx + 1) + ix;
+        v[0] = (iz*(ny + 1)*(nx + 1) + iy*(nx + 1) + ix);
         v[1] = v[0] + 1;
         v[2] = v[0] + (nx + 1);
         v[3] = v[1] + (nx + 1);
@@ -118,12 +118,14 @@ size_t HexBoxMesh::hex_search(Point pc){
     const double z1 = std::max(p0.z(), p1.z());
     
     unsigned int out_range = std::numeric_limits<unsigned int>::max();
-    if(x<x0 || x>x1 || y<y0 || y>y1 || z<z0 || z>z1) return out_range;
-
+    if(x<x0 || x>x1 || y<y0 || y>y1 || z<z0 || z>z1) {
+      return out_range;
+    }
     size_t ix = static_cast<size_t>((x-x0)/((x1-x0)/nx));
     size_t iy = static_cast<size_t>((y-y0)/((y1-y0)/ny));
     size_t iz = static_cast<size_t>((z-z0)/((z1-z0)/nz));
 
     size_t cell_index = iz*ny*nx + iy*nx + ix;
+    std::cout<<p0<<p1<<pc<<std::endl;
     return cell_index;
 }

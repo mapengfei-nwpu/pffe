@@ -5,7 +5,7 @@
 # Require CMake 3.5
 cmake_minimum_required(VERSION 3.5)
 
-set(PROJECT_NAME demo_bcs.exe)
+set(PROJECT_NAME demo.exe)
 project(${PROJECT_NAME})
 
 # Set CMake behavior
@@ -32,7 +32,7 @@ if (HAVE_NO_MULTLINE)
 endif()
 
 # Executable
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} HexBoxMesh.cpp HexBoxMesh_test.cpp)
 
 # Target libraries
 target_link_libraries(${PROJECT_NAME} dolfin)
