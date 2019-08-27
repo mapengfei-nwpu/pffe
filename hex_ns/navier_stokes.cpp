@@ -6,6 +6,9 @@
 #include "PressureUpdate.h"
 #include "VelocityUpdate.h"
 
+const double lenth = 10.0;
+const double width = 1.0;
+
 using namespace dolfin;
 
 // Define noslip domain
